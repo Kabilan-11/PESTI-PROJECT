@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS pestcare Solutions - Pesticides & Chemicals</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Header with animated background -->
+    <header>
+        <div class="header-overlay"></div>
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">🌾</div>
+                <div>
+                    <h1 class="fade-in">JS PESTCARE Solutions</h1>
+                    <p class="tagline fade-in-delay">Your Trusted Partner in Crop Protection</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Happy Farmers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-brand">js pestcare solutions</div>
+            <ul>
+                <li><a href="#services" class="nav-link">🔬 Services</a></li>
+                <li><a href="#products" class="nav-link">🧪 Products</a></li>
+                <li><a href="#pricing" class="nav-link">💰 Pricing</a></li>
+                <li><a href="#order" class="nav-link">🛒 Order Now</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-history" onclick="viewOrderHistory()" title="Order History">📋</button>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2 class="hero-title">Premium Agricultural Solutions</h2>
+            <p class="hero-subtitle">Protect Your Crops with Industry-Leading Pesticides & Chemicals</p>
+            <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Explore Products →
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop" alt="Healthy crops" onerror="this.src='https://via.placeholder.com/800x600/66bb6a/ffffff?text=Healthy+Crops'">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive agricultural support for your farming needs</p>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop" alt="Consultation" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Consultation'">
+                    </div>
+                    <div class="service-icon">🔬</div>
+                    <h3>Pest Consultation</h3>
+                    <p>Expert advice on pest identification and treatment solutions</p>
+                    <span class="price-tag">₹50/session</span>
+                    <button class="service-btn" onclick="bookService('Pest Consultation')">Book Now</button>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop" alt="Application" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Application'">
+                    </div>
+                    <div class="service-icon">🚜</div>
+                    <h3>Application Services</h3>
+                    <p>Professional pesticide application by certified technicians</p>
+                    <span class="price-tag">₹150/acre</span>
+                    <button class="service-btn" onclick="bookService('Application Services')">Book Now</button>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop" alt="Soil Testing" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Soil+Testing'">
+                    </div>
+                    <div class="service-icon">📊</div>
+                    <h3>Soil Testing</h3>
+                    <p>Comprehensive soil analysis for optimal chemical selection</p>
+                    <span class="price-tag">₹75/test</span>
+                    <button class="service-btn" onclick="bookService('Soil Testing')">Book Now</button>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=400&h=300&fit=crop" alt="Delivery" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Delivery'">
+                    </div>
+                    <div class="service-icon">📦</div>
+                    <h3>Bulk Delivery</h3>
+                    <p>Free delivery on orders over ₹500</p>
+                    <span class="price-tag">Free*</span>
+                    <button class="service-btn" onclick="bookService('Bulk Delivery')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">High-quality pesticides and chemicals for optimal crop protection</p>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('insecticide')">Insecticides</button>
+                <button class="filter-btn" onclick="filterProducts('herbicide')">Herbicides</button>
+                <button class="filter-btn" onclick="filterProducts('fungicide')">Fungicides</button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="🔍 Search products..." onkeyup="searchProducts(this.value)" />
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-category="insecticide" data-aos="zoom-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop" alt="Chlorpyrifos" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Chlorpyrifos'">
+                        <span class="badge">Popular</span>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Chlorpyrifos</h3>
+                            <span class="category">Insecticide</span>
+                        </div>
+                        <p class="description">Broad-spectrum organophosphate for soil and foliar pests</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+                        <div class="product-details">
+                            <span class="size">1L Bottle</span>
+                            <span class="price">₹45.99</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Chlorpyrifos', 45.99, 'insecticide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="insecticide" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=300&fit=crop" alt="Deltamethrin" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Deltamethrin'">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Deltamethrin</h3>
+                            <span class="category">Insecticide</span>
+                        </div>
+                        <p class="description">Pyrethroid insecticide for cotton, vegetables, and fruits</p>
+                        <div class="rating">⭐⭐⭐⭐☆ <span>(4.5)</span></div>
+                        <div class="product-details">
+                            <span class="size">500ml Bottle</span>
+                            <span class="price">₹38.50</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Deltamethrin', 38.50, 'insecticide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="insecticide" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=400&h=300&fit=crop" alt="Lambda-Cyhalothrin" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Lambda'">
+                        <span class="badge new">New</span>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Lambda-Cyhalothrin</h3>
+                            <span class="category">Insecticide</span>
+                        </div>
+                        <p class="description">Fast-acting control for chewing and sucking insects</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+                        <div class="product-details">
+                            <span class="size">1L Bottle</span>
+                            <span class="price">₹52.75</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Lambda-Cyhalothrin', 52.75, 'insecticide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="insecticide" data-aos="zoom-in">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400&h=300&fit=crop" alt="Malathion" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Malathion'">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Malathion</h3>
+                            <span class="category">Insecticide</span>
+                        </div>
+                        <p class="description">Effective against aphids, mites, and fruit flies</p>
+                        <div class="rating">⭐⭐⭐⭐☆ <span>(4.6)</span></div>
+                        <div class="product-details">
+                            <span class="size">2L Bottle</span>
+                            <span class="price">₹34.99</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Malathion', 34.99, 'insecticide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="herbicide" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop" alt="Glyphosate" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Glyphosate'">
+                        <span class="badge">Best Seller</span>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Glyphosate</h3>
+                            <span class="category">Herbicide</span>
+                        </div>
+                        <p class="description">Non-selective herbicide for weed control</p>
+                        <div class="rating">⭐⭐⭐⭐⭐ <span>(4.7)</span></div>
+                        <div class="product-details">
+                            <span class="size">5L Container</span>
+                            <span class="price">₹89.99</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Glyphosate', 89.99, 'herbicide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fungicide" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop" alt="Mancozeb" onerror="this.src='https://via.placeholder.com/400x300/66bb6a/ffffff?text=Mancozeb'">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Mancozeb</h3>
+                            <span class="category">Fungicide</span>
+                        </div>
+                        <p class="description">Protective fungicide for various crops</p>
+                        <div class="rating">⭐⭐⭐⭐☆ <span>(4.4)</span></div>
+                        <div class="product-details">
+                            <span class="size">1kg Pack</span>
+                            <span class="price">₹28.50</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCart('Mancozeb', 28.50, 'fungicide')">
+                            <span>Add to Cart</span> 🛒
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2 class="section-title">Bulk Pricing</h2>
+            <p class="section-subtitle">Choose the plan that fits your farming needs</p>
+            <div class="pricing-table">
+                <div class="pricing-tier" data-aos="fade-up">
+                    <div class="tier-icon">🌱</div>
+                    <h3>Starter</h3>
+                    <div class="tier-price">₹100 - ₹500</div>
+                    <ul>
+                        <li>✓ Standard pricing</li>
+                        <li>✓ 5% discount on orders over ₹300</li>
+                        <li>✓ Email support</li>
+                        <li>✓ Delivery in 5-7 days</li>
+                    </ul>
+                </div>
+                <div class="pricing-tier featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="badge">Popular</div>
+                    <div class="tier-icon">🌾</div>
+                    <h3>Professional</h3>
+                    <div class="tier-price">₹500 - ₹2000</div>
+                    <ul>
+                        <li>✓ 10% bulk discount</li>
+                        <li>✓ Free delivery</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Delivery in 2-3 days</li>
+                        <li>✓ Free consultation</li>
+                    </ul>
+                </div>
+                <div class="pricing-tier" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tier-icon">🏆</div>
+                    <h3>Enterprise</h3>
+                    <div class="tier-price">₹2000+</div>
+                    <ul>
+                        <li>✓ 15% bulk discount</li>
+                        <li>✓ Free express delivery</li>
+                        <li>✓ 24/7 support</li>
+                        <li>✓ Next day delivery</li>
+                        <li>✓ Dedicated account manager</li>
+                        <li>✓ Custom formulations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <p class="section-subtitle">Fill in your details and we'll get back to you shortly</p>
+            <div class="order-container">
+                <div class="cart-summary">
+                    <h3>Shopping Cart</h3>
+                    <div id="cart-items">
+                        <p class="empty-cart">Your cart is empty</p>
+                    </div>
+                    <div class="cart-total">
+                        <strong>Total: ₹<span id="cart-total">0.00</span></strong>
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn-cart-action" onclick="clearCart()">Clear Cart</button>
+                        <button class="btn-cart-action" onclick="printOrderSummary()">Print</button>
+                    </div>
+                    <div class="discount-section">
+                        <input type="text" id="discount-code" placeholder="Discount Code" />
+                        <button class="btn-discount" onclick="applyDiscount()">Apply</button>
+                    </div>
+                    <p id="discount-message" class="discount-message"></p>
+                </div>
+
+                <form class="order-form" onsubmit="submitOrder(event)">
+                    <h3>Customer Information</h3>
+                    
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+
+                    <label for="farm-size">Farm Size (acres)</label>
+                    <input type="number" id="farm-size" name="farm-size" placeholder="Enter farm size">
+
+                    <label for="crop-type">Crop Type</label>
+                    <select id="crop-type" name="crop-type">
+                        <option value="">Select crop type</option>
+                        <option value="cotton">Cotton</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="corn">Corn</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="delivery">Delivery Address *</label>
+                    <textarea id="delivery" name="delivery" rows="3" required placeholder="Enter complete delivery address"></textarea>
+
+                    <label for="notes">Special Instructions</label>
+                    <textarea id="notes" name="notes" rows="2" placeholder="Any special requirements or notes"></textarea>
+
+                    <button type="submit" class="btn-submit">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>js pestcare Solutions</h3>
+                    <p>Your trusted partner in crop protection since 2009</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="javascript:void(0)" onclick="viewOrderHistory()">Order History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📞 1-800-js pestcare</p>
+                    <p>📧 info@agrichem.com</p>
+                    <p>📍 123 Farm Road, Agriculture City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriChem Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
